@@ -1,0 +1,29 @@
+---
+title: "R Notebook VPD crime"
+output: html_notebook
+---
+
+
+
+```{r}
+crime <- read.csv("crime-in-vancouver/crime.csv")
+```
+
+```{r}
+summary(crime)
+```
+```{r}
+length(unique(crime$HUNDRED_BLOCK))
+length(unique(crime$NEIGHBOURHOOD))
+```
+#tidy time replace hour and min with Mean
+```{r}
+crime$HOUR
+crime$HOUR [is.na(crime$HOUR)]<-15.00
+crime$MINUTE[is.na(crime$MINUTE)]<-17.00
+head(crime)
+crime$MINUTE
+```
+# use Neighbourhood
+# top 10 blocks high crime type
+# crime per hood
